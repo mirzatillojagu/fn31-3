@@ -8,9 +8,6 @@
 
 
 
-
-
-
 // button.style.backgroundColor = "white";
 // button.style.borderRadius = "8px";
 // button.style.borderColor = "blue";
@@ -43,7 +40,7 @@
 
 //     if (backgroundColor) {
 //       body.style.backgroundColor =
-//         "#" + Math.floor(Math.random() * 16777123).toString(16);
+//       Math.floor(Math.random() * 16777123).toString(16);
 //       backgroundColor = false;
 //     } else {
 //       body.style.backgroundColor = "black";
@@ -76,6 +73,7 @@
 
 
 
+// 6
 
 // const btn1 = document.querySelector('#btn1')
 // const btn2 = document.querySelector('#btn2')
@@ -102,12 +100,12 @@
 // })
 
 
-// btn2.addEventListener('click', function(){
-//   body.style.backgroundColor = 'white'
-//   title.style.color = 'black'
-//   btn1.style.borderColor = 'black'
+btn2.addEventListener('click', function(){
+  body.style.backgroundColor = 'white'
+  title.style.color = 'black'
+  btn1.style.borderColor = 'black'
 
-// })
+})
 
 
 
@@ -118,4 +116,6 @@
 // textInput && textInput.addEventListener('input', (e) => {
 //   lengthElement && (lengthElement.textContent = e.target.value.length);
 // });
+
+
 
