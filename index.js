@@ -1,121 +1,68 @@
-// const button = document.querySelector("#button");
-// const wrap = document.querySelector("#wrap");
-// const invisiblebutton = document.querySelector("#invisiblebutton");
-// const title = document.querySelector("#title");
-// const body = document.querySelector("body");
-// const DayAndNight = document.querySelector(".DayAndNight");
+const button = document.querySelector("#button");
+const wrap = document.querySelector("#wrap");
+const invisiblebutton = document.querySelector("#invisiblebutton");
+const body = document.querySelector("body");
+const textInput = document.querySelector("#textInput");
+const lengthDisplay = document.querySelector("#lengthDisplay");
+const button1 = document.querySelector("#button1");
+const button2 = document.querySelector("#button2");
+const text = document.querySelector("#text");
+
+let color = true;
+let backgroundColor = true;
+
+button.addEventListener("click", function () {
+  button.style.color = color ? "black" : "white"; // Tugma matni rangini o‘zgartirish
+  color = !color;
+
+  backgroundColor = !backgroundColor;
+  body.style.backgroundColor = backgroundColor
+    ? "black"
+    : `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+});
 
 
+button.addEventListener("click", function () {
+  color = !color;
+  title.style.color = color ? "black" : "white";
+  title.style.display = title.style.display === "none" ? "block" : "none";
 
+  backgroundColor = !backgroundColor;
+  body.style.backgroundColor = backgroundColor
+    ? "black"
+    : `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+});
 
-// button.style.backgroundColor = "white";
-// button.style.borderRadius = "8px";
-// button.style.borderColor = "blue";
-// button.style.marginBottom = "15px";
-// button.style.marginRight = "30px";
+invisiblebutton.addEventListener("click", function () {
+  if (wrap.style.display === "none") {
+    wrap.style.display = "block";
+    invisiblebutton.textContent = "Tugmalarni yashirish";
+  } else {
+    wrap.style.display = "none";
+    invisiblebutton.textContent = "Tugmalarni ko‘rsatish";
+  }
+});
 
-// invisiblebutton.style.borderRadius = "9px";
-// invisiblebutton.style.marginTop = "10px";
-// invisiblebutton.style.padding = "3px";
-// invisiblebutton.style.borderColor = "blue";
-// invisiblebutton.style.marginBottom = "15px";
-// invisiblebutton.style.backgroundColor = "white";
+textInput.addEventListener("input", function (e) {
+  const length = e.target.value.length;
+  lengthDisplay.textContent = `Uzunlik: ${length}`;
+});
 
-// let color = true;
-// let backgroundColor = true;
-// button &&
-//   button.addEventListener("click", function () {
-//     if (color) {
-//       title.style.color = "white";
-//       color = false;
-//     } else {
-//       title.style.color = "white";
-//       color = true;
-//     }
-//     if (title.style.display === "none") {
-//       title.style.display = "block";
-//     } else {
-//       title.style.display = "none";
-//     }
+function updateClock() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+  document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+}
 
-//     if (backgroundColor) {
-//       body.style.backgroundColor =
-//       Math.floor(Math.random() * 16777123).toString(16);
-//       backgroundColor = false;
-//     } else {
-//       body.style.backgroundColor = "black";
-//       backgroundColor = true;
-//     }
-//   });
+setInterval(updateClock, 1000);
+updateClock();
 
-// button &&
-//   invisiblebutton.addEventListener("click", function () {
-//     if (wrap.style.display === "none") {
-//       wrap.style.display = "block";
-//       invisiblebutton.textContent = "Tugmalarni yashirish";
-//     } else {
-//       wrap.style.display = "none";
-//       invisiblebutton.textContent = "Tugmalarni korsatish";
-//     }
-//   });
+button1.addEventListener("click", () => {
+  text.style.display = "none";
+});
 
-// function updateClock() {
-//   const now = new Date();
-//   const hours = String(now.getHours()).padStart(2, "0");
-//   const minutes = String(now.getMinutes()).padStart(2, "0");
-//   const seconds = String(now.getSeconds()).padStart(2, "0");
-//   document.getElementById(
-//     "clock"
-//   ).textContent = `${hours}:${minutes}:${seconds}`;
-// setInterval(updateClock, 1000);
-// updateClock();
-// }
-
-
-
-// 6
-
-// const btn1 = document.querySelector('#btn1')
-// const btn2 = document.querySelector('#btn2')
-// const body = document.querySelector('body')
-// const title = document.querySelector('.title')
-
-// btn1.style.padding = '6px'
-// btn1.style.marginTop = '30px'
-// btn1.style.borderRadius = '56px'
-// btn1.style.gap = '10px'
-// btn1.style.backgroundColor = 'white'
-
-
-// btn2.style.padding = '6px'
-// btn2.style.borderRadius = '56px'
-// btn2.style.backgroundColor = 'white'
-
-
-// btn1.addEventListener('click', function(){
-//   body.style.backgroundColor = 'black'
-//   title.style.color = 'white'
-// btn1.style.borderColor = 'white'
-
-// })
-
-
-btn2.addEventListener('click', function(){
-  body.style.backgroundColor = 'white'
-  title.style.color = 'black'
-  btn1.style.borderColor = 'black'
-
-})
-
-
-
-// 8
-// const textInput = document.querySelector('#textInput');
-
-
-// textInput && textInput.addEventListener('input', (e) => {
-//   lengthElement && (lengthElement.textContent = e.target.value.length);
-// });
-
-
-
+button2.addEventListener("click", () => {
+  text.style.display = "block";
+});
